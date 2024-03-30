@@ -1,0 +1,21 @@
+{
+  "name": "winter-image",
+  "version": "0.1.0",
+  "type": "module",
+  "author": "Tom Busby",
+  "license": "EPL-2.0",
+  "main": "dist/winter-image.mjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@editorjs/editorjs": "^2.28.0",
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
+    "vite-plugin-css-injected-by-js": "^3.3.0",
+    "sass": "^1.66.1",
+    "svelte": "^4.0.5",
+    "vite": "^4.4.5"
+  }
+}
