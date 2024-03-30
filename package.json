@@ -1,10 +1,10 @@
 {
-  "name": "winter-image",
+  "name": "winter-video",
   "version": "0.1.0",
   "type": "module",
   "author": "Tom Busby",
   "license": "EPL-2.0",
-  "main": "dist/winter-image.mjs",
+  "main": "dist/winter-video.mjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
