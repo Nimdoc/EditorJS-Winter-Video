@@ -15,7 +15,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/main.js'),
       name: 'WinterVideo',
       formats: ['es', 'umd'],
-      fileName: (format) => format === 'es' ? 'winter-image.mjs' : 'winter-image.umd.js' ,
+      fileName: (format) => format === 'es' ? 'winter-video.mjs' : 'winter-video.umd.js' ,
     },
     minify: false
   },
