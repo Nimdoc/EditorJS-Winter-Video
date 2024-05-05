@@ -14,8 +14,8 @@ export default defineConfig({
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/main.js'),
       name: 'WinterVideo',
-      formats: ['es'],
-      fileName: () => 'winter-video.mjs',
+      formats: ['es', 'umd'],
+      fileName: (format) => format === 'es' ? 'winter-image.mjs' : 'winter-image.umd.js' ,
     },
     minify: false
   },
