@@ -9,10 +9,7 @@ export default class WinterVideo {
           url: ''
         },
         caption: '',
-        alt: '',
-        withBorder: false,
-        withBackground: false,
-        stretched: false,
+        alt: ''
       }
     } else {
       this.data = data;

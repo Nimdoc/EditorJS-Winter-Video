@@ -7,35 +7,43 @@
             url: ''
         },
         caption: '',
-        alt: '',
-        withBorder: false,
-        withBackground: false,
-        stretched: false,
+        alt: ''
     };
 
     $: dispatch("updateData", data);
 
     let pasteUrlFieldOpen = false;
     let altFieldOpen = false;
+    let captionFieldOpen = false;
 
     function updateUrl(newUrl) {
         data.file.url = newUrl;
     }
 
-    function mediaManagerClick() {
+    function closeAllFields() {
         pasteUrlFieldOpen = false;
         altFieldOpen = false;
+        captionFieldOpen = false;
+    }
+
+    function mediaManagerClick() {
+        closeAllFields();
         openMediaFinder()
     }
 
     function pasteUrlClick() {
-        altFieldOpen = false;
+        closeAllFields();
         pasteUrlFieldOpen = !pasteUrlFieldOpen;
     }
 
     function altTextClick() {
-        pasteUrlFieldOpen = false;
+        closeAllFields();
         altFieldOpen = !altFieldOpen;
+    }
+    
+    function captionTextClick() {
+        closeAllFields();
+        captionFieldOpen = !captionFieldOpen;
     }
 
     function openMediaFinder() {
@@ -85,6 +93,7 @@ class:video-block--paste-field-open={pasteUrlFieldOpen}
             <button on:click|preventDefault={mediaManagerClick} class="video-block__button">Open Media Finder</button>
             <button on:click|preventDefault={pasteUrlClick} class="video-block__button">Paste URL</button>
             <button on:click|preventDefault={altTextClick} class="video-block__button">Alt Text</button>
+            <button on:click|preventDefault={captionTextClick} class="video-block__button">Caption Text</button>
         </div>
         <div class="video-block__box-bottom">
             {#if pasteUrlFieldOpen && data}
@@ -92,6 +101,9 @@ class:video-block--paste-field-open={pasteUrlFieldOpen}
             {/if}
             {#if altFieldOpen && data}
                 <input bind:value={data.alt}>
+            {/if}
+            {#if captionFieldOpen && data}
+                <input bind:value={data.caption}>
             {/if}
         </div>
     </div>
@@ -146,7 +158,7 @@ class:video-block--paste-field-open={pasteUrlFieldOpen}
         &--paste-field-open
             min-height: 100px
 
-        img
+        img, video
             max-width: 100%
             height: auto
 
